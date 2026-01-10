@@ -1,0 +1,128 @@
+[
+  {
+    "id": "b1f8b9c1-4c6e-4e3a-b8f1-0c2b9f8a1a01",
+    "status": "upcoming",
+    "checkInDate": "2026-01-10",
+    "checkOutDate": "2026-01-15",
+    "nights": 5,
+    "totalPrice": 2280,
+    "notes": "",
+    "property": {
+      "id": "9c1da0c4-a237-482f-b010-4c3edb2505f9",
+      "name": "Scenic Villa",
+      "type": "chalet",
+      "city": "Amsterdam",
+      "country": "NL",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1686090449192-4ab1d00cb735"
+    },
+    "guest": {
+      "id": "a7e9c3b2-8f1d-4c6e-b9a2-3d4e5f6a7b02",
+      "name": "Lucas Van Dijk"
+    }
+  },
+  {
+    "id": "b2a9c7e4-1c8d-4e2f-9a01-5f6e7d8c9b02",
+    "status": "upcoming",
+    "checkInDate": "2026-03-18",
+    "checkOutDate": "2026-03-22",
+    "nights": 4,
+    "totalPrice": 1824,
+    "notes": "This is a test booking",
+    "property": {
+      "id": "9c1da0c4-a237-482f-b010-4c3edb2505f9",
+      "name": "Scenic Villa",
+      "type": "chalet",
+      "city": "Amsterdam",
+      "country": "NL",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1686090449192-4ab1d00cb735"
+    },
+    "guest": {
+      "id": "a7e9c3b2-8f1d-4c6e-b9a2-3d4e5f6a7b02",
+      "name": "Emma Jansen"
+    }
+  },
+  {
+    "id": "c3d8e1f2-7a6b-4c9d-8e01-1f2a3b4c5d03",
+    "status": "ongoing",
+    "checkInDate": "2026-04-05",
+    "checkOutDate": "2026-04-08",
+    "nights": 3,
+    "totalPrice": 435,
+    "notes": "",
+    "property": {
+      "id": "a6c0dc0b-1d3d-4ae2-8675-7b30f373fcdf",
+      "name": "Modern Bungalow",
+      "type": "cabin",
+      "city": "Amsterdam",
+      "country": "NL",
+      "imageUrl": "https://images.unsplash.com/photo-1654535095187-769ba364ad7a"
+    },
+    "guest": {
+      "id": "f1e2d3c4-b5a6-4e7f-8a9b-0c1d2e3f4a03",
+      "name": "Noah De Vries"
+    }
+  },
+  {
+    "id": "c4b5a6d7-e8f9-4a0b-9c01-2d3e4f5a6b04",
+    "status": "finished",
+    "checkInDate": "2026-02-12",
+    "checkOutDate": "2026-02-15",
+    "nights": 3,
+    "totalPrice": 435,
+    "notes": "This is a test booking",
+    "property": {
+      "id": "a6c0dc0b-1d3d-4ae2-8675-7b30f373fcdf",
+      "name": "Modern Bungalow",
+      "type": "cabin",
+      "city": "Amsterdam",
+      "country": "NL",
+      "imageUrl": "https://images.unsplash.com/photo-1654535095187-769ba364ad7a"
+    },
+    "guest": {
+      "id": "b4c5d6e7-f8a9-4b0c-8d1e-2f3a4b5c6d04",
+      "name": "Sophie Bakker"
+    }
+  },
+  {
+    "id": "d5e6f7a8-b9c0-4d1e-8f01-3a4b5c6d7e05",
+    "status": "upcoming",
+    "checkInDate": "2026-05-01",
+    "checkOutDate": "2026-05-06",
+    "nights": 5,
+    "totalPrice": 2960,
+    "notes": "This is a test booking",
+    "property": {
+      "id": "fb83efa4-a5be-4cbb-a567-ed88dcd27313",
+      "name": "Spacious Chalet",
+      "type": "studio",
+      "city": "London",
+      "country": "UK",
+      "imageUrl": "https://images.unsplash.com/photo-1574100841405-e03151df7f72"
+    },
+    "guest": {
+      "id": "c6d7e8f9-a0b1-4c2d-9e3f-4a5b6c7d8e05",
+      "name": "Oliver Smith"
+    }
+  },
+  {
+    "id": "d6c7b8a9-e0f1-4a2b-9c01-5d6e7f8a9b06",
+    "status": "cancelled",
+    "checkInDate": "2026-05-10",
+    "checkOutDate": "2026-05-14",
+    "nights": 4,
+    "totalPrice": 2368,
+    "notes": "This is a test booking",
+    "property": {
+      "id": "fb83efa4-a5be-4cbb-a567-ed88dcd27313",
+      "name": "Spacious Chalet",
+      "type": "studio",
+      "city": "London",
+      "country": "UK",
+      "imageUrl": "https://images.unsplash.com/photo-1574100841405-e03151df7f72"
+    },
+    "guest": {
+      "id": "e7f8a9b0-c1d2-4e3f-8a9b-6c7d8e9f0a06",
+      "name": "Amelia Brown"
+    }
+  }
+]
