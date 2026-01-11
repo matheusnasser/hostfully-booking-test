@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { describe, expect, it, vi } from "vitest";
@@ -43,7 +43,7 @@ const renderWithProviders = (
 };
 
 describe("BookingForm", () => {
-  it("should render property information correctly", () => {
+  it("should render property information in create mode", () => {
     renderWithProviders(<BookingForm mode="create" property={mockProperty} />);
 
     expect(screen.getByText("Scenic Villa")).toBeInTheDocument();
@@ -51,7 +51,7 @@ describe("BookingForm", () => {
     expect(screen.getByText("$456/night")).toBeInTheDocument();
   });
 
-  it("should validate required fields", async () => {
+  it("should disable submit button when dates are not selected", async () => {
     const user = userEvent.setup();
     renderWithProviders(<BookingForm mode="create" property={mockProperty} />);
 
@@ -62,19 +62,40 @@ describe("BookingForm", () => {
       screen.getByRole("textbox", { name: /guest name/i }),
       "John Doe"
     );
+
     expect(submitBtn).toBeDisabled();
   });
 
-  it("should display overlap error when selecting conflicting dates", async () => {
+  it("should show character count for notes field", async () => {
     const user = userEvent.setup();
+    renderWithProviders(<BookingForm mode="create" property={mockProperty} />);
+
+    const notesInput = screen.getByRole("textbox", { name: /notes/i });
+
+    expect(screen.getByText("0 / 500 characters")).toBeInTheDocument();
+
+    await user.type(notesInput, "Special request");
+
+    await waitFor(() => {
+      expect(screen.getByText("15 / 500 characters")).toBeInTheDocument();
+    });
+  });
+
+  it("should populate form fields in edit mode", () => {
+    const existingBooking = mockBookingsList[0];
+
     renderWithProviders(
-      <BookingForm mode="create" property={mockProperty} />,
+      <BookingForm mode="edit" booking={existingBooking} />,
       createTestStore(mockBookingsList)
     );
 
-    const guestInput = screen.getByRole("textbox", { name: /guest name/i });
-    await user.type(guestInput, "New Guest");
+    const guestInput = screen.getByRole("textbox", {
+      name: /guest name/i,
+    }) as HTMLInputElement;
 
-    expect(screen.getByText(/select dates/i)).toBeInTheDocument();
+    expect(guestInput.value).toBe(existingBooking.guest.name);
+    expect(
+      screen.getByRole("button", { name: /update booking/i })
+    ).toBeInTheDocument();
   });
 });
