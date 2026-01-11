@@ -38,19 +38,26 @@ export default function BookingPage() {
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-6 w-full">
       <div className="w-full lg:w-1/4">
-        <div className="h-[52px] flex items-center mb-4">
+        <div className="h-[52px] flex items-center mb-4 px-2 lg:px-0">
           <h2 className="section-title mb-0!">My Properties</h2>
         </div>
-        <div className="space-y-2">
-          {items.map((property) => (
-            <PropertyCard
-              animated
-              key={property.id}
-              property={property}
-              selectedProperty={selectedProperty === property.id}
-              setSelectedProperty={setSelectedProperty}
-            />
-          ))}
+        <div className="-mx-6 px-6 lg:mx-0 lg:px-0">
+          <div className="flex gap-4 overflow-x-auto pb-4 lg:flex-col lg:space-y-2 lg:overflow-x-visible lg:pb-0 snap-x snap-mandatory lg:snap-none scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+            {items.map((property) => (
+              <div
+                key={property.id}
+                className={`shrink-0 w-[75vw] max-w-[280px] lg:w-full snap-center `}
+              >
+                <PropertyCard
+                  animated
+                  key={property.id}
+                  property={property}
+                  selectedProperty={selectedProperty === property.id}
+                  setSelectedProperty={setSelectedProperty}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

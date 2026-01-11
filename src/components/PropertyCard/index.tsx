@@ -47,24 +47,36 @@ export const PropertyCard = memo(function PropertyCard({
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       key={property.id}
-      className={`relative w-full mb-4 h-48 overflow-hidden rounded-lg cursor-pointer ${
-        animated && "scale-105"
+      className={`relative w-full h-44 lg:h-48 overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer ${
+        selectedProperty ? "ring-4 ring-primary ring-offset-2" : ""
       }`}
       aria-label={`Select ${property.name} in ${property.city}`}
       aria-pressed={selectedProperty}
     >
       <div
-        className={`opacity-40 absolute inset-0 bg-cover bg-center col-span-1 ${
-          selectedProperty && "opacity-100"
+        className={`absolute inset-0 bg-cover bg-center transition-all duration-300 ${
+          selectedProperty ? "opacity-100 scale-105" : "opacity-70"
         }`}
         style={{ backgroundImage: `url(${property.imageUrl})` }}
       />
 
-      <div className="absolute inset-0 bg-black/50" />
+      <div
+        className={`absolute inset-0 transition-opacity duration-300 ${
+          selectedProperty
+            ? "bg-linear-to-t from-black/70 via-black/30 to-transparent"
+            : "bg-linear-to-t from-black/80 via-black/40 to-transparent"
+        }`}
+      />
 
       <div className="relative z-10 p-4 text-white h-full flex flex-col justify-end">
-        <h2 className="text-xl font-bold">{property.name}</h2>
-        <p className="text-sm opacity-90">
+        <h2
+          className={`text-xl lg:text-xl font-bold mb-1 transition-all ${
+            selectedProperty ? "text-white drop-shadow-lg" : ""
+          }`}
+        >
+          {property.name}
+        </h2>
+        <p className="text-sm lg:text-sm opacity-90 font-medium">
           {property.city} {property.country}
         </p>
       </div>
